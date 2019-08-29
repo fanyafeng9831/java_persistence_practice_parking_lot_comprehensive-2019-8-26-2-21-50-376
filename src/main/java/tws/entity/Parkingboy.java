@@ -1,13 +1,13 @@
 package tws.entity;
 
 public class Parkingboy {
-    private int parkingboyId;
+    private String parkingboyId;
     private String name;
     private int parkingboyAge;
-	public int getParkingboyId() {
+	public String getParkingboyId() {
 		return parkingboyId;
 	}
-	public void setParkingboyId(int parkingboyId) {
+	public void setParkingboyId(String parkingboyId) {
 		this.parkingboyId = parkingboyId;
 	}
 	public String getName() {
@@ -22,7 +22,7 @@ public class Parkingboy {
 	public void setParkingboyAge(int parkingboyAge) {
 		this.parkingboyAge = parkingboyAge;
 	}
-	public Parkingboy(int parkingboyId, String name, int parkingboyAge) {
+	public Parkingboy(String parkingboyId, String name, int parkingboyAge) {
 		super();
 		this.parkingboyId = parkingboyId;
 		this.name = name;
