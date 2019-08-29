@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 
 import org.junit.After;
 import org.junit.Before;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;

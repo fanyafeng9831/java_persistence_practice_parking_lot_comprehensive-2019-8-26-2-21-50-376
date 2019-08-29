@@ -15,6 +15,7 @@ import tws.repository.ParkingBoyMapper;
 
 @RestController
 @RequestMapping("/parkingboy")
+
 public class ParkingBoyController {
 	
 	@Autowired

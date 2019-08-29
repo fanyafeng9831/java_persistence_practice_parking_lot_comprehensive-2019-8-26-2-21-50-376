@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/parkinglots")
+
 public class ParkingLotController {
 
     @Autowired

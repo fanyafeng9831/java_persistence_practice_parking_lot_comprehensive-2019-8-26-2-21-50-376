@@ -5,6 +5,7 @@ import tws.entity.Parkinglot;
 import java.util.List;
 
 @Mapper
+
 public interface ParkingLotMapper {
 
     @Select("select * from parkinglot;")

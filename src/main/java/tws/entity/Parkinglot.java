@@ -2,6 +2,7 @@ package tws.entity;
 
 public class Parkinglot {
     private int parkinglotId;
+	
     private int parkinglotCapacity;
     private int parkinglotAvailablePositionCount;
     private int parkingboyId;
