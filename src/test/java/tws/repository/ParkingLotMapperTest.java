@@ -56,12 +56,32 @@ public class ParkingLotMapperTest {
     @Test
     public void should_get_parkinglot_when_insert_parkinglot() {
         // given
-    	parkingLotMapper.insert(new Parkinglot(6, 6, 6,6));
+    	parkingLotMapper.insertParkingLot(new Parkinglot(6, 6, 6,6));
         // when
         List<Parkinglot> parkingLotsList = parkingLotMapper.selectAll();
         // then
-        assertEquals(1, parkingLotsList.get(0).getParkinglotId());
-        assertEquals(10, parkingLotsList.get(0).getParkinglotCapacity());
-        assertEquals(10, parkingLotsList.get(0).getParkinglotAvailablePositionCount());
+        assertEquals(6, parkingLotsList.get(0).getParkinglotId());
+        assertEquals(6, parkingLotsList.get(0).getParkinglotCapacity());
+        assertEquals(6, parkingLotsList.get(0).getParkinglotAvailablePositionCount());
+    }
+    @Test
+    public void should_update_parkinglot_when_update_parkinglot() {
+        // given
+    	parkingLotMapper.updateinsertParkingLot(6,new Parkinglot(7, 7, 7,7));
+        // when
+        List<Parkinglot> parkingLotsList = parkingLotMapper.selectAll();
+        // then
+        assertEquals(7, parkingLotsList.get(0).getParkinglotId());
+        assertEquals(7, parkingLotsList.get(0).getParkinglotCapacity());
+        assertEquals(7, parkingLotsList.get(0).getParkinglotAvailablePositionCount());
+    }
+    @Test
+    public void should_delete_parkinglot_when_delete_parkinglot() {
+        // given
+    	parkingLotMapper.deleteinsertParkingLot(7);
+        // when
+        List<Parkinglot> parkingLotsList = parkingLotMapper.selectAll();
+        // then
+        assertEquals(0, parkingLotsList.size());
     }
 }

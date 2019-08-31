@@ -12,4 +12,6 @@ import java.util.List;
 public interface EmployeeMapper {
     List<Employee> selectAll();
    void insert(@Param("employee") Employee employee);
+   
+   List<Employee> selectAllEmployees(@Param(value = "offSet") Integer offSet,@Param(value = "pageSize") Integer pageSize);
 }

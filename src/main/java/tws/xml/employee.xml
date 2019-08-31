@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<select id="selectAllEmployees" resultType="tws.entity.Employee">
+        select * from   employee  order by id desc
+        <if test="offSet and pageSize!=null">
+            limit #{offSet},#{pageSize}
+        </if>
+    </select>

@@ -19,26 +19,27 @@ public class ParkingLotController {
     private ParkingLotMapper parkingLotMapper;
 
     @GetMapping("")
-    public ResponseEntity<List<Parkinglot>> getAll() {
-        return ResponseEntity.ok(parkingLotMapper.selectAll());
+    @ResponseStatus(HttpStatus.OK)
+    public List<Parkinglot> getAll() {
+        return parkingLotMapper.selectAll();
     }
 
     @PostMapping("")
-    public ResponseEntity<Parkinglot> createEmployee(@RequestBody Parkinglot parkingLot) {
-        parkingLotMapper.insert(parkingLot);
-        return ResponseEntity.created(URI.create("/parkinglots/" + parkingLot.getParkinglotId())).body(parkingLot);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void createEmployee(@RequestBody Parkinglot parkingLot) {
+        parkingLotMapper.insertParkingLot(parkingLot);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Parkinglot> updateEmployee(@PathVariable int id, @RequestBody Parkinglot parkingLot){
-        parkingLotMapper.update(id,parkingLot);
-        return ResponseEntity.ok(parkingLot);
+    @ResponseStatus(HttpStatus.OK)
+    public void updateEmployee(@PathVariable int id, @RequestBody Parkinglot parkingLot){
+    	 parkingLotMapper.updateinsertParkingLot(id,parkingLot);   
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void deleteEmployee(@PathVariable int id) {
-        parkingLotMapper.deleteOne(id);
+        parkingLotMapper.deleteinsertParkingLot(id);
     }
 
 }

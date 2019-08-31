@@ -1,5 +1,6 @@
 package tws.repository;
 
+import org.apache.ibatis.annotations.Param;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,4 +44,16 @@ public class EmployeeMapperTest {
         // then
         assertEquals(1, employeeList.size());
     }
+    @Test
+    public void should_Fetch_firstPage_employee_Given_AllEmployees() {
+        // given
+        jdbcTemplate.execute("INSERT INTO EMPLOYEE VALUES(1,'zhangsan', 21);");
+        // when
+        //@Param(value = "offSet") Integer offSet,@Param(value = "pageSize") Integer pageSize
+        List<Employee> employeeList = employeeMapper.selectAllEmployees(2,3);
+        int num =employeeList.size();
+        // then
+        assertEquals(2, employeeList.size());
+    }
+    
 }

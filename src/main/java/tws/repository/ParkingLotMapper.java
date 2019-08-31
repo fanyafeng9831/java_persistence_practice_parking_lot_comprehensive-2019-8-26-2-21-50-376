@@ -12,11 +12,11 @@ public interface ParkingLotMapper {
     List<Parkinglot> selectAll();
 
     @Insert("insert into parkinglot values (#{parkinglot.parkinglotId}, #{parkinglot.parkinglotCapacity}, #{parkinglot.parkinglotAvailablePositionCount}, #{parkinglot.parkingboyId});")
-    void insert(@Param("parkinglot") Parkinglot parkinglot);
+    void insertParkingLot(@Param("parkinglot") Parkinglot parkinglot);
 
-    @Update("update parkinglot set parkinglot.parkinglotCapacity=#{employee.parkinglotCapacity}, parkinglot.parkinglotAvailablePositionCount=#{employee.parkinglotAvailablePositionCount} where parkinglot.parkingboyId = #{parkingboyId};")
-    void update(@Param("parkinglot") int parkingBoyId, @Param("employee") Parkinglot parkinglot);
+    @Update("update parkinglot set parkinglot.parkinglotCapacity=#{parkinglot.parkinglotCapacity}, parkinglot.parkinglotAvailablePositionCount=#{parkinglot.parkinglotAvailablePositionCount} where parkinglot.parkingboyId = #{parkingboyId};")
+    void updateinsertParkingLot(@Param("parkingboyId") int parkingBoyId, @Param("parkinglot") Parkinglot parkinglot);
 
     @Delete("delete from parkinglot where parkinglot.parkingboyId #{parkingBoysId};")
-    void deleteOne(@Param("parkingBoysId") int parkingBoysId);
+    void deleteinsertParkingLot(@Param("parkingBoysId") int parkingBoysId);
 }
